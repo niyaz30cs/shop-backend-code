@@ -18,10 +18,10 @@ app.listen(port, async()=>{
     try
     {
         await connection();
-        console.log(`Server is running on ${port}`);
+        console.log(`Server is running on Port No-${port}`);
     }
     catch(err)
     {
-        console.log("Error listing", err);
+        console.log("Some Error on Port No", err);
     }
 });
