@@ -1,5 +1,4 @@
 const userRouter = require('express').Router();
-
 const { fetchCart, fetchCartByUser, removeCartItem, addToCart, deleteAll } = require('../Controllers/Cart');
 
 const { Accesseries, Total, Laptops, Mobiles, AllinOne } = require('../Controllers/Category');
@@ -24,7 +23,6 @@ userRouter.delete('/remove/:email/:productId', removeCartItem)
 userRouter.post('/addingtocart', addToCart)
 
 userRouter.delete('/deleteall', deleteAll)
-
 
 userRouter.post('/addProd', addProduct)
 

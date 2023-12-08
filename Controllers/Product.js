@@ -56,7 +56,7 @@ const search = async (req, res) => {
     const result = new ApiFeachers(Products.find(), data).search();
     const products = await result.query; //Assuming it's an array of Mongoose documents
 
-    return res.send({msg: "rendered",products,});
+    return res.send({msg: "rendered",Products,});
   } 
   catch (err) 
   {

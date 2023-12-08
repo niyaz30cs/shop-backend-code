@@ -11,8 +11,6 @@ const deleteAll = async (req, res) => {
   return res.send({ msg: "Deleted all data from cart" });
 };
 
-
-
 const fetchCart = async (req, res) => {
   const result = await Cart.find();
 

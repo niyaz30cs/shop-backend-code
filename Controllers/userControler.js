@@ -1,4 +1,4 @@
-const userDataBase = require("../Schema/User_schema");
+const User_db = require("../Schema/User_schema");
 const jwt = require("jsonwebtoken");
 const { hashingPassword, comparePassword } = require("./Struc");
 const secretKey = "Ecommerce";
@@ -20,7 +20,7 @@ const Register = async (req, res) => {
     const hashPassword = hashingPassword(password);
 
     //saving the data
-    const tempObj = new userDataBase({
+    const tempObj = new User_db({
       name: name,
       Email: email,
       phone: phone,
@@ -47,7 +47,7 @@ const Login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await userDataBase.findOne({ email: email });
+    const user = await User_db.findOne({ email: email });
 
     if (!user) {
       return res.status(404).send({
